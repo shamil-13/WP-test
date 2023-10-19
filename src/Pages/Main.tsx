@@ -10,6 +10,7 @@ import { Button, Grid } from '@mui/material'
 import InputField from '../Components/InputField'
 import InputNumberField from '../Components/InputNumberField'
 import { schema } from '../Utils/dataHelpers'
+import './styles.css'
 
 const Main = () => {
   const { control, handleSubmit, formState, setError } = useForm({
@@ -26,9 +27,9 @@ const Main = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className='container'>
       {fields.map((field, index) => (
-        <Grid container spacing={2} key={field.id}>
+        <Grid container spacing={2} key={field.id} sx={{marginBottom:'20px'}}>
           <InputField
             control={control}
             index={index}
